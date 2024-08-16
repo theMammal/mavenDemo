@@ -50,3 +50,20 @@ BusinessRule({
     when: 'after',
     active: true,
 })
+
+ClientScript({
+    $id: Now.ID['cs0'],
+    name: 'another_maven_client_script_demo',
+    table: 'x_revfo_mavenwidge_demotable',
+    active: true,
+    applies_extended: false,
+    global: true,
+    ui_type: 'all',
+    description: 'Generated from VS Code SDK',
+    messages: '',
+    isolate_script: false,
+    type: 'onLoad',
+    script: script`function onLoad() {
+        g_form.addInfoMessage("TThis is for an SDK Demo")
+    }`,
+})
