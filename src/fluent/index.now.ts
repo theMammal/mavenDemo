@@ -52,7 +52,7 @@ BusinessRule({
 })
 
 ClientScript({
-    $id: Now.ID['cs0'],
+    $id: Now.ID['cs1'],
     name: 'another_maven_client_script_demo',
     table: 'x_revfo_mavenwidge_demotable',
     active: true,
@@ -66,4 +66,17 @@ ClientScript({
     script: script`function onLoad() {
         g_form.addInfoMessage("TThis is for an SDK Demo")
     }`,
+})
+
+//creates a business rule that pops up state change message whenever a todo record is updated
+BusinessRule({
+    $id: Now.ID['br1'],
+    action: ['update'],
+    table: 'x_revfo_mavenwidge_demotable',
+    script: gs.addInfoMessage("Record updated"),
+    name: 'show message on update',
+    order: 100,
+    when: 'before',
+    active: true,
+    
 })
