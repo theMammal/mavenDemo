@@ -52,7 +52,7 @@ BusinessRule({
 })
 
 ClientScript({
-    $id: Now.ID['cs0'],
+    $id: Now.ID['cs1'],
     name: 'another_maven_client_script_demo',
     table: 'x_revfo_mavenwidge_demotable',
     active: true,
