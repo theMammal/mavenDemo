@@ -5,20 +5,23 @@ import { Table, DateColumn, StringColumn } from '@servicenow/sdk/core'
 import { showStateUpdate } from '../server/script.js'
 
 //creates todo table, with three columns (deadline, status and task)
-export const x_snc_example_todo= Table({
+export const x_snc_example_todo = Table({
     name: 'x_revfo_mavenwidge_demotable',
     schema: {
-        deadline: DateColumn({ label: 'deadline' }),
+        deadline: DateColumn({ label: 'Deadline', maxLength: 40 }),
         state: StringColumn({
             label: 'State',
+            maxLength: 40,
+            dropdown: 'dropdown_with_none',
             choices: {
-                ready: { label: 'Ready' },
-                completed: { label: 'Completed' },
-                in_progress: { label: 'In Progress' },
+                ready: { label: 'Ready', inactive_on_update: false },
+                completed: { label: 'Completed', inactive_on_update: false },
+                in_progress: { label: 'In Progress', inactive_on_update: false },
             },
         }),
         task: StringColumn({ label: 'Task', maxLength: 120 }),
     },
+    label: 'Mavenwidge Demotable',
 })
 
 //creates a client script that pops up 'Table loaded successfully!!' message everytime todo record is loaded
@@ -35,7 +38,7 @@ ClientScript({
     isolate_script: false,
     type: 'onLoad',
     script: script`function onLoad() {
-        g_form.addInfoMessage("Table loaded successfully!!")
+        g_form.addInfoMessage("You have just saved a record!!")
     }`,
 })
 
@@ -49,6 +52,7 @@ BusinessRule({
     order: 100,
     when: 'after',
     active: true,
+    abort_action: false,
 })
 
 ClientScript({
@@ -78,5 +82,5 @@ BusinessRule({
     order: 100,
     when: 'before',
     active: true,
-    
+    abort_action: false,
 })
