@@ -64,6 +64,19 @@ ClientScript({
     isolate_script: false,
     type: 'onLoad',
     script: script`function onLoad() {
-        g_form.addInfoMessage("TThis is for an SDK Demo")
+        g_form.addInfoMessage("This is for an SDK Demo")
     }`,
+})
+
+//creates a business rule that pops up state change message whenever a todo record is updated
+BusinessRule({
+    $id: Now.ID['br1'],
+    action: ['update'],
+    table: 'x_revfo_mavenwidge_demotable',
+    script: `gs.addInfoMessage("Record updated")`,
+    name: 'show message on update',
+    order: 100,
+    when: 'before',
+    active: true,
+    
 })
