@@ -73,7 +73,7 @@ BusinessRule({
     $id: Now.ID['br1'],
     action: ['update'],
     table: 'x_revfo_mavenwidge_demotable',
-    script: script 'gs.addInfoMessage("Record updated")',
+    script: 'gs.addInfoMessage("Record updated")',
     name: 'show message on update',
     order: 100,
     when: 'before',
