@@ -1,6 +1,6 @@
 name: filediff
-:#You may pin to the exact commit or the version
-  uses: Shopify/filediff@v0.0.4
+#You may pin to the exact commit or the version
+#  uses: Shopify/filediff@v0.0.4
   with:
     # The target branch to compare the diff against
     target_branch: 
