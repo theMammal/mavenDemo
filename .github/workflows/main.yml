@@ -1,4 +1,4 @@
-            - name: filediff
+name: filediff
   # You may pin to the exact commit or the version.
   # uses: Shopify/filediff@ada920c512dce7297703791084e5d9f2d65df418
   uses: Shopify/filediff@v0.0.4
