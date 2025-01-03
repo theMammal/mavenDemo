@@ -4,5 +4,5 @@ export function showStateUpdate(current, previous) {
     const currentState = current.getValue('state')
     const previousState = previous.getValue('state')
 
-    gs.addInfoMessage(`state has been carefully updated from "${previousState}" to "${currentState}"`)
+    gs.addInfoMessage(`state was just carefully updated from "${previousState}" to "${currentState}"`)
 }
